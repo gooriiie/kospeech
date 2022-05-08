@@ -1,0 +1,168 @@
+[2022-04-26 23:59:56,016][kospeech.utils][INFO] - audio:
+  audio_extension: wav
+  sample_rate: 16000
+  frame_length: 20
+  frame_shift: 10
+  normalize: true
+  del_silence: true
+  feature_extract_by: kaldi
+  time_mask_num: 4
+  freq_mask_num: 2
+  spec_augment: false
+  input_reverse: false
+  transform_method: fbank
+  n_mels: 80
+  freq_mask_para: 18
+model:
+  architecture: deepspeech2
+  teacher_forcing_ratio: 1.0
+  teacher_forcing_step: 0.0
+  min_teacher_forcing_ratio: 1.0
+  dropout: 0.3
+  bidirectional: false
+  joint_ctc_attention: false
+  max_len: 400
+  use_bidirectional: true
+  rnn_type: gru
+  hidden_dim: 1024
+  activation: hardtanh
+  num_encoder_layers: 3
+train:
+  dataset: kspon
+  dataset_path: C:\Users\hooni\Desktop\dataset\data
+  transcripts_path: ../../../data/transcripts.txt
+  output_unit: character
+  batch_size: 8
+  save_result_every: 1000
+  checkpoint_every: 5000
+  print_every: 10
+  mode: train
+  num_workers: 4
+  use_cuda: true
+  num_threads: 2
+  init_lr_scale: 0.01
+  final_lr_scale: 0.05
+  max_grad_norm: 400
+  weight_decay: 1.0e-05
+  total_steps: 200000
+  seed: 777
+  resume: false
+  optimizer: adam
+  init_lr: 1.0e-06
+  final_lr: 1.0e-06
+  peak_lr: 0.0001
+  warmup_steps: 400
+  num_epochs: 20
+  reduction: mean
+  lr_scheduler: tri_stage_lr_scheduler
+
+[2022-04-26 23:59:56,020][kospeech.utils][INFO] - Operating System : Windows 10
+[2022-04-26 23:59:56,020][kospeech.utils][INFO] - Processor : AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+[2022-04-26 23:59:56,021][kospeech.utils][INFO] - CUDA is available : False
+[2022-04-26 23:59:56,021][kospeech.utils][INFO] - PyTorch version : 1.8.0+cpu
+[2022-04-26 23:59:56,039][kospeech.utils][INFO] - split dataset start !!
+[2022-04-26 23:59:56,072][kospeech.utils][INFO] - split dataset complete !!
+[2022-04-26 23:59:56,255][kospeech.utils][INFO] - start
+[2022-04-26 23:59:56,256][kospeech.utils][INFO] - Epoch 0 start
+[2022-04-27 00:01:10,682][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_01_09-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_01_09-model.pt
+[2022-04-27 00:01:10,683][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:01:11,417][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_01_10-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_01_10-model.pt
+[2022-04-27 00:01:11,417][kospeech.utils][INFO] - Epoch 0 (Training) Loss 0.0504 CER 9.8586
+[2022-04-27 00:01:11,419][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:01:12,337][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:01:12,337][kospeech.utils][INFO] - Epoch 0 CER 10.0957
+[2022-04-27 00:01:12,341][kospeech.utils][INFO] - Epoch 0 Training result saved as a csv file complete !!
+[2022-04-27 00:01:12,341][kospeech.utils][INFO] - Epoch 1 start
+[2022-04-27 00:02:27,770][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_02_27-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_02_27-model.pt
+[2022-04-27 00:02:27,771][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:02:28,497][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_02_27-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_02_27-model.pt
+[2022-04-27 00:02:28,498][kospeech.utils][INFO] - Epoch 1 (Training) Loss 0.0496 CER 9.6963
+[2022-04-27 00:02:28,499][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:02:29,401][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:02:29,401][kospeech.utils][INFO] - Epoch 1 CER 9.8261
+[2022-04-27 00:02:29,403][kospeech.utils][INFO] - Epoch 1 Training result saved as a csv file complete !!
+[2022-04-27 00:02:29,403][kospeech.utils][INFO] - Epoch 2 start
+[2022-04-27 00:03:34,341][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_03_33-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_03_33-model.pt
+[2022-04-27 00:03:34,341][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:03:35,074][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_03_34-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_03_34-model.pt
+[2022-04-27 00:03:35,074][kospeech.utils][INFO] - Epoch 2 (Training) Loss 0.0473 CER 9.5988
+[2022-04-27 00:03:35,076][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:03:36,062][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:03:36,062][kospeech.utils][INFO] - Epoch 2 CER 9.6899
+[2022-04-27 00:03:36,064][kospeech.utils][INFO] - Epoch 2 Training result saved as a csv file complete !!
+[2022-04-27 00:03:36,064][kospeech.utils][INFO] - Epoch 3 start
+[2022-04-27 00:04:37,592][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_04_36-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_04_36-model.pt
+[2022-04-27 00:04:37,593][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:04:38,360][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_04_37-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_04_37-model.pt
+[2022-04-27 00:04:38,361][kospeech.utils][INFO] - Epoch 3 (Training) Loss 0.0424 CER 9.2635
+[2022-04-27 00:04:38,361][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:04:39,284][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:04:39,284][kospeech.utils][INFO] - Epoch 3 CER 9.3185
+[2022-04-27 00:04:39,287][kospeech.utils][INFO] - Epoch 3 Training result saved as a csv file complete !!
+[2022-04-27 00:04:39,287][kospeech.utils][INFO] - Epoch 4 start
+[2022-04-27 00:05:48,397][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_05_47-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_05_47-model.pt
+[2022-04-27 00:05:48,397][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:05:49,132][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_05_48-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_05_48-model.pt
+[2022-04-27 00:05:49,132][kospeech.utils][INFO] - Epoch 4 (Training) Loss 0.0353 CER 8.3766
+[2022-04-27 00:05:49,133][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:05:50,030][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:05:50,030][kospeech.utils][INFO] - Epoch 4 CER 8.2504
+[2022-04-27 00:05:50,033][kospeech.utils][INFO] - Epoch 4 Training result saved as a csv file complete !!
+[2022-04-27 00:05:50,033][kospeech.utils][INFO] - Epoch 5 start
+[2022-04-27 00:06:54,487][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_06_53-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_06_53-model.pt
+[2022-04-27 00:06:54,487][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:06:55,247][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_06_54-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_06_54-model.pt
+[2022-04-27 00:06:55,248][kospeech.utils][INFO] - Epoch 5 (Training) Loss 0.0255 CER 7.2248
+[2022-04-27 00:06:55,249][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:06:56,291][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:06:56,292][kospeech.utils][INFO] - Epoch 5 CER 7.0804
+[2022-04-27 00:06:56,294][kospeech.utils][INFO] - Epoch 5 Training result saved as a csv file complete !!
+[2022-04-27 00:06:56,294][kospeech.utils][INFO] - Epoch 6 start
+[2022-04-27 00:08:15,534][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_08_14-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_08_14-model.pt
+[2022-04-27 00:08:15,534][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:08:16,401][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_08_15-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_08_15-model.pt
+[2022-04-27 00:08:16,402][kospeech.utils][INFO] - Epoch 6 (Training) Loss 0.0156 CER 6.3175
+[2022-04-27 00:08:16,403][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:08:17,338][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:08:17,338][kospeech.utils][INFO] - Epoch 6 CER 6.2118
+[2022-04-27 00:08:17,340][kospeech.utils][INFO] - Epoch 6 Training result saved as a csv file complete !!
+[2022-04-27 00:08:17,341][kospeech.utils][INFO] - Epoch 7 start
+[2022-04-27 00:09:35,164][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_09_34-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_09_34-model.pt
+[2022-04-27 00:09:35,164][kospeech.utils][INFO] - train() completed
+[2022-04-27 00:09:36,036][kospeech.utils][INFO] - save checkpoints
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_09_35-trainer_states.pt
+C:\Users\hooni\Desktop\kospeech\outputs\2022-04-26\23-59-55\2022_04_27_00_09_35-model.pt
+[2022-04-27 00:09:36,037][kospeech.utils][INFO] - Epoch 7 (Training) Loss 0.0100 CER 5.6410
+[2022-04-27 00:09:36,039][kospeech.utils][INFO] - validate() start
+[2022-04-27 00:09:37,049][kospeech.utils][INFO] - validate() completed
+[2022-04-27 00:09:37,050][kospeech.utils][INFO] - Epoch 7 CER 5.5603

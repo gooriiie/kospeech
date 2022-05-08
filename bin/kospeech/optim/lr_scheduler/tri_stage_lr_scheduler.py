@@ -32,7 +32,7 @@ class TriStageLRScheduler(LearningRateScheduler):
         self.warmup_steps = warmup_steps
         self.hold_steps = int(total_steps >> 1) - warmup_steps
         self.decay_steps = int(total_steps >> 1)
-
+        
         self.warmup_rate = (self.peak_lr - self.init_lr) / self.warmup_steps if self.warmup_steps != 0 else 0
         self.decay_factor = -math.log(final_lr_scale) / self.decay_steps
 

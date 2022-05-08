@@ -89,6 +89,7 @@ def train(config: DictConfig) -> nn.DataParallel:
         epoch_time_step, trainset_list, validset = split_dataset(config, config.train.transcripts_path, vocab)
         model = build_model(config, vocab, device)
 
+        print(epoch_time_step)
         optimizer = get_optimizer(model, config)
         lr_scheduler = get_lr_scheduler(config, optimizer, epoch_time_step)
 
